@@ -1,0 +1,667 @@
+/* Menú visual tipo tiles/cards inspirado en deltaf.com.pe */
+.menu-tiles {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 1.2rem 0 1.5rem 0;
+  flex-wrap: wrap;
+}
+.menu-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px #0001;
+  padding: 1.1rem 1.7rem 1.1rem 1.7rem;
+  min-width: 110px;
+  min-height: 110px;
+  text-decoration: none;
+  color: #1a2340;
+  font-weight: 600;
+  font-size: 1.08rem;
+  transition: box-shadow 0.2s, transform 0.2s, background 0.2s, color 0.2s;
+  border: 2.5px solid #f7d77400;
+  position: relative;
+}
+.menu-tile:hover {
+  box-shadow: 0 6px 24px #1a234033;
+  background: #f7d774;
+  color: #1a2340;
+  border-color: #f7d774;
+  transform: translateY(-6px) scale(1.04);
+}
+.tile-icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  color: #1a2340;
+  transition: color 0.2s;
+}
+.menu-tile:hover .tile-icon {
+  color: #fff;
+}
+.tile-title {
+  font-size: 1.08rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+@media (max-width: 700px) {
+  .menu-tiles {
+    gap: 0.7rem;
+  }
+  .menu-tile {
+    min-width: 90px;
+    min-height: 90px;
+    padding: 0.7rem 0.7rem;
+    font-size: 0.98rem;
+  }
+  .tile-icon {
+    font-size: 1.5rem;
+  }
+}
+/* Slider horizontal para servicios profesionales */
+.servicios-slider-container {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto 2rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.servicios-slider {
+  display: flex;
+  gap: 2.2rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 0.5rem 0.2rem 1.2rem 0.2rem;
+  scrollbar-width: none;
+}
+.servicios-slider::-webkit-scrollbar {
+  display: none;
+}
+.servicio-cat.card {
+  min-width: 270px;
+  max-width: 320px;
+  flex: 0 0 300px;
+  margin: 0 auto;
+  background: #eaf0fa;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px #0001;
+  padding: 1.2rem 2rem 1.2rem 2rem;
+  text-align: left;
+  border: 1.5px solid #eaf0fa;
+  transition: box-shadow 0.2s, transform 0.2s, border 0.2s;
+}
+.servicio-cat.card:hover {
+  box-shadow: 0 4px 18px #1a234033;
+  transform: translateY(-6px) scale(1.03);
+  border-color: #f7d774;
+}
+.serv-arrow {
+  background: #f7d774;
+  color: #1a2340;
+  border: none;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 1.7rem;
+  cursor: pointer;
+  box-shadow: 0 1px 6px #0002;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+  z-index: 2;
+}
+.serv-arrow:hover {
+  background: #1a2340;
+  color: #f7d774;
+}
+.serv-arrow-left {
+  margin-right: 0.7rem;
+}
+.serv-arrow-right {
+  margin-left: 0.7rem;
+}
+.serv-slider-dots {
+  text-align: center;
+  margin-top: -0.5rem;
+  margin-bottom: 1.2rem;
+}
+.serv-dot {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  margin: 0 5px;
+  background: #fff7;
+  border-radius: 50%;
+  border: 2px solid #f7d774;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.serv-dot.active {
+  background: #f7d774;
+}
+@media (max-width: 900px) {
+  .servicios-slider {
+    gap: 1.2rem;
+  }
+  .servicio-cat.card {
+    min-width: 220px;
+    max-width: 95vw;
+    flex: 0 0 80vw;
+  }
+}
+/* Slider horizontal para ministerios */
+.ministerios-slider-container {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto 2rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ministerios-slider {
+  display: flex;
+  gap: 2.2rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 0.5rem 0.2rem 1.2rem 0.2rem;
+  scrollbar-width: none;
+}
+.ministerios-slider::-webkit-scrollbar {
+  display: none;
+}
+.ministerio-card {
+  min-width: 270px;
+  max-width: 320px;
+  flex: 0 0 300px;
+  margin: 0 auto;
+}
+.min-arrow {
+  background: #f7d774;
+  color: #1a2340;
+  border: none;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 1.7rem;
+  cursor: pointer;
+  box-shadow: 0 1px 6px #0002;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+  z-index: 2;
+}
+.min-arrow:hover {
+  background: #1a2340;
+  color: #f7d774;
+}
+.min-arrow-left {
+  margin-right: 0.7rem;
+}
+.min-arrow-right {
+  margin-left: 0.7rem;
+}
+.min-slider-dots {
+  text-align: center;
+  margin-top: -0.5rem;
+  margin-bottom: 1.2rem;
+}
+.min-dot {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  margin: 0 5px;
+  background: #fff7;
+  border-radius: 50%;
+  border: 2px solid #f7d774;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.min-dot.active {
+  background: #f7d774;
+}
+@media (max-width: 900px) {
+  .ministerios-slider {
+    gap: 1.2rem;
+  }
+  .ministerio-card {
+    min-width: 220px;
+    max-width: 95vw;
+    flex: 0 0 80vw;
+  }
+}
+/* Layout horizontal para ministerios */
+.min-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+}
+.min-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+.min-content h3 {
+  margin: 0 0 0.2rem 0;
+  font-size: 1.18rem;
+}
+.min-content p {
+  margin: 0;
+  font-size: 1.01rem;
+  color: #444;
+}
+@media (max-width: 700px) {
+  .min-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .min-content {
+    align-items: center;
+    text-align: center;
+  }
+}
+/* Mejoras visuales para ministerios */
+.ministerios-cards {
+  gap: 2.2rem;
+}
+.ministerio-card {
+  position: relative;
+  padding-top: 1.5rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+  border: 1.5px solid #eaf0fa;
+  background: #fff;
+}
+.ministerio-card:hover {
+  box-shadow: 0 4px 18px #1a234033;
+  transform: translateY(-6px) scale(1.03);
+  border-color: #f7d774;
+}
+.min-icon {
+  font-size: 2.7rem;
+  color: #1a2340;
+  background: #f7d774;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.7rem auto;
+  box-shadow: 0 2px 8px #0001;
+}
+.ministerio-card h3 {
+  margin-top: 0.2rem;
+  color: #1a2340;
+  font-size: 1.25rem;
+}
+.ministerio-card p {
+  color: #444;
+  font-size: 1.05rem;
+}
+@media (max-width: 700px) {
+  .cards, .ministerios-cards {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .ministerio-card {
+    min-width: 0;
+    width: 100%;
+  }
+}
+/* Sección de redes sociales destacada antes del footer */
+.social-section {
+  text-align: center;
+  margin: 2.5rem 0 1.5rem 0;
+}
+.social-section h3 {
+  color: #1a2340;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.social-footer {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.social-footer a {
+  color: #fff;
+  font-size: 2.2rem;
+  transition: color 0.2s;
+  text-shadow: 0 2px 8px #0008, 0 1px 0 #222;
+  opacity: 1;
+}
+.social-footer a:hover {
+  color: #f7d774;
+  opacity: 1;
+}
+/* Contacto mejorado */
+.contacto-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+.contact-form {
+  background: #eaf0fa;
+  border-radius: 12px;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  box-shadow: 0 1px 4px #0001;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #b3c6e0;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #fff;
+  margin-bottom: 0.2rem;
+  resize: none;
+  transition: border 0.2s;
+}
+.contact-form input:focus, .contact-form textarea:focus {
+  border: 1.5px solid #1a2340;
+  outline: none;
+}
+.contact-form textarea {
+  min-height: 90px;
+  max-height: 200px;
+}
+.contact-form button {
+  background: #1a2340;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 0.5rem;
+  box-shadow: 0 1px 4px #0001;
+}
+.contact-form button:hover {
+  background: #f7d774;
+  color: #1a2340;
+}
+.contacto-grid .info {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  box-shadow: 0 1px 4px #0001;
+  font-size: 1.05rem;
+  color: #1a2340;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.contacto-grid .info i {
+  color: #f7d774;
+  margin-right: 0.7rem;
+}
+@media (max-width: 900px) {
+  .contacto-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+/* Redes sociales en header */
+.social-header {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-left: 1.5rem;
+}
+.social-header a {
+  color: #fff;
+  font-size: 1.7rem;
+  text-shadow: 0 1px 6px #1a2340cc, 0 0px 2px #f7d77499;
+  transition: color 0.2s, text-shadow 0.2s;
+}
+.social-header a:hover {
+  color: #f7d774;
+  text-shadow: 0 1px 6px #1a2340cc, 0 0px 2px #fff;
+}
+/* Botón WhatsApp destacado */
+.whatsapp-btn {
+  display: inline-block;
+  margin: 0.7rem 0 0.5rem 0;
+  padding: 0.5rem 1.2rem;
+  background: #25d366;
+  color: #fff;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  box-shadow: 0 1px 4px #0001;
+  transition: background 0.2s;
+}
+.whatsapp-btn:hover {
+  background: #128c7e;
+  color: #fff;
+}
+/*
+  Opción 5: Inspiración DeltaF, colores azul oscuro, blanco y detalles dorados, slider hero, cards, navbar sticky.
+*/
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: #f7faff;
+  color: #1a2340;
+  margin: 0;
+}
+.navbar {
+  background: linear-gradient(90deg, #1a2340 80%, #f7d774 100%);
+  color: #fff;
+  padding: 1.2rem 2rem 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px #0001;
+}
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #fff;
+  text-shadow: 1px 2px 8px #1a2340cc;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 1.2rem;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+nav a:hover {
+  color: #f7d774;
+}
+.hero-slider {
+  position: relative;
+  width: 100%;
+  max-height: 420px;
+  overflow: hidden;
+  background: #1a2340;
+}
+.slide {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 420px;
+  left: 0;
+  top: 0;
+  transition: opacity 0.7s;
+}
+.slide.active {
+  display: block;
+  position: relative;
+  opacity: 1;
+  z-index: 2;
+}
+.slide img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+.slide-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  text-align: center;
+  z-index: 3;
+}
+.slide-caption h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #f7d774;
+  text-shadow: 1px 2px 8px #1a2340cc;
+}
+.slide-caption p {
+  font-size: 1.2rem;
+  color: #fff;
+  text-shadow: 1px 2px 8px #1a2340cc;
+}
+.slider-controls {
+  position: absolute;
+  left: 0; right: 0; bottom: 1.2rem;
+  text-align: center;
+  z-index: 4;
+}
+.dot {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin: 0 6px;
+  background: #fff7;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #f7d774;
+  transition: background 0.2s;
+}
+.dot.active {
+  background: #f7d774;
+}
+.quienes, .ministerios, .servicios, .contacto {
+  max-width: 900px;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px #0001;
+  padding: 2rem 2.5rem;
+}
+.versiculo {
+  background: #eaf0fa;
+  border-left: 5px solid #1a2340;
+  padding: 1rem 2rem;
+  margin: 2rem 0;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #1a2340;
+}
+.cards {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card {
+  background: #eaf0fa;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  min-width: 180px;
+  box-shadow: 0 1px 4px #0001;
+  text-align: center;
+}
+.servicios-categorias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+.servicio-cat {
+  background: #f7faff;
+  border: 1px solid #eaf0fa;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  min-width: 200px;
+  box-shadow: 0 1px 4px #0001;
+  margin-bottom: 1rem;
+}
+.servicio-cat h4 {
+  color: #1a2340;
+  margin-bottom: 0.5rem;
+}
+.servicio-cat ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.servicio-cat li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+.whatsapp-chat {
+  color: #25d366;
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
+  vertical-align: middle;
+  text-decoration: none;
+}
+.whatsapp-chat:hover {
+  color: #128c7e;
+}
+.social {
+  margin-top: 2rem;
+  text-align: center;
+}
+.social a {
+  color: #1a2340;
+  font-size: 2rem;
+  margin: 0 0.7rem;
+  transition: color 0.2s;
+}
+.social a:hover {
+  color: #f7d774;
+}
+footer {
+  background: #1a2340;
+  color: #fff;
+  text-align: center;
+  padding: 1.2rem 0 1rem 0;
+  margin-top: 2rem;
+  border-radius: 16px 16px 0 0;
+}
+@media (max-width: 700px) {
+  .cards, .servicios-categorias {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .quienes, .ministerios, .servicios, .contacto {
+    padding: 1rem 0.5rem;
+  }
+  .slide, .slide img {
+    height: 220px;
+  }
+}
